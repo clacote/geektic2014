@@ -7,4 +7,5 @@ bin/
 test-bin/
 *.iml
 MyDB.*
-/test-bin
+
+*.log
