@@ -25,11 +25,12 @@ import javax.sql.DataSource;
 public class DaoTestConfig {
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean emf() {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean result = new LocalContainerEntityManagerFactoryBean();
         result.setPersistenceUnitName("GEEKTIC");
         result.setDataSource(dataSource());
         result.setPersistenceProviderClass(HibernatePersistenceProvider.class);
+        result.setPackagesToScan("com.ninja_squad.geektic.model");
         return result;
     }
 
@@ -46,7 +47,7 @@ public class DaoTestConfig {
     @Bean
     public PlatformTransactionManager transactionManager() {
         JpaTransactionManager txManager = new JpaTransactionManager();
-        txManager.setEntityManagerFactory(emf().getObject());
+        txManager.setEntityManagerFactory(entityManagerFactory().getObject());
         return txManager;
     }
 

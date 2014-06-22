@@ -33,6 +33,7 @@ dependencies {
     testCompile 'org.mockito:mockito-all:1.9.5'
     testCompile 'com.ninja-squad:DbSetup:1.2.0'
     testCompile 'org.springframework:spring-test:4.0.5.RELEASE'
+    testCompile 'org.assertj:assertj-core:1.6.1'
 
     runtime 'org.aspectj:aspectjweaver:1.7.2'
     runtime 'org.hsqldb:hsqldb:2.2.9'

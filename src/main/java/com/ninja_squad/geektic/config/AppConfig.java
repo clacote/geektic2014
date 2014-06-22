@@ -43,6 +43,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         result.setPersistenceUnitName("GEEKTIC");
         result.setDataSource(dataSource());
         result.setPersistenceProviderClass(HibernatePersistenceProvider.class);
+        result.setPackagesToScan("com.ninja_squad.geektic.model");
         return result;
     }
 
