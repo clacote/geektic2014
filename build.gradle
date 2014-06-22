@@ -1,5 +1,15 @@
 apply plugin: 'war'
-apply plugin : 'eclipse'
+apply plugin: 'tomcat'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'org.gradle.api.plugins:gradle-tomcat-plugin:1.2.4'
+    }
+}
 
 repositories {
     mavenCentral()
@@ -25,4 +35,12 @@ dependencies {
     runtime 'org.slf4j:slf4j-api:1.7.5'
     runtime 'org.slf4j:jcl-over-slf4j:1.7.5' // because Spring uses commons-logging
     runtime 'log4j:log4j:1.2.14'
+
+    def tomcatVersion = '7.0.54'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}"
+    tomcat("org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}") {
+        exclude group: 'org.eclipse.jdt.core.compiler', module: 'ecj'
+    }
+
 }
