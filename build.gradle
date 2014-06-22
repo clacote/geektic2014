@@ -32,8 +32,6 @@ dependencies {
 
     runtime 'org.aspectj:aspectjweaver:1.7.2'
     runtime 'org.hsqldb:hsqldb:2.2.9'
-    runtime 'org.slf4j:slf4j-api:1.7.5'
-    runtime 'org.slf4j:jcl-over-slf4j:1.7.5' // because Spring uses commons-logging
     runtime 'log4j:log4j:1.2.14'
 
     def tomcatVersion = '7.0.54'
@@ -44,3 +42,5 @@ dependencies {
     }
 
 }
+
+tomcatRun.contextPath = "/"
