@@ -9,3 +9,4 @@ test-bin/
 MyDB.*
 
 *.log
+out/
